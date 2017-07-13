@@ -27,9 +27,6 @@ public class cFacturas {
     private clsFactura newfactura;//ingrese un priente nuevo
     private clsFactura selectedfactura;//cuando seleccione un cliente para borrar o actualizar
     private clsCliente selectedCliente;
-    private clsDfacpro newdfactura;
-    private clsDfacpro selecteddfactura;
-    private clsProducto selectedproducto;
 
     public cFacturas() {
         newfactura = new clsFactura();
@@ -41,12 +38,7 @@ public class cFacturas {
     }
     public void insertar(){
         newfactura.setIdcliente(selectedCliente);
-        newdfactura.setIdproducto(selectedproducto);
-        newdfactura.setNofactura(selectedfactura);
-        if (crudDfacpro.save(newdfactura)){
-            newdfactura=new clsDfacpro();
-            
-        }
+        
         if (crudFactura.save(newfactura)) {
             
             newfactura = new clsFactura();
@@ -111,29 +103,7 @@ public class cFacturas {
         this.selectedCliente = selectedCliente;
     }
 
-    public clsDfacpro getNewdfactura() {
-        return newdfactura;
-    }
-
-    public void setNewdfactura(clsDfacpro newdfactura) {
-        this.newdfactura = newdfactura;
-    }
-
-    public clsDfacpro getSelecteddfactura() {
-        return selecteddfactura;
-    }
-
-    public void setSelecteddfactura(clsDfacpro selecteddfactura) {
-        this.selecteddfactura = selecteddfactura;
-    }
-
-    public clsProducto getSelectedproducto() {
-        return selectedproducto;
-    }
-
-    public void setSelectedproducto(clsProducto selectedproducto) {
-        this.selectedproducto = selectedproducto;
-    }
+    
     
 
     
